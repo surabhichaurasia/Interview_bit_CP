@@ -1,0 +1,15 @@
+int Solution::isPalindrome(int A) {
+    if(A<0)
+        return false;
+    string ans= to_string(A);
+    int start=0;
+    int end=ans.length()-1;
+    while(start<end)
+    {
+        if(ans[start]!=ans[end])
+            return false;
+        start++;
+        end--;
+    }
+    return true;
+}
