@@ -1,0 +1,23 @@
+vector<int> Solution::plusOne(vector<int> &A) {
+    int carry=1;
+    vector<int> v;
+    for(int i=A.size()-1;i>=0;i--)
+    {
+        int sum=carry+A[i];
+        carry=sum/10;
+        v.push_back(sum%10);
+    }
+    v.push_back(carry);
+    int x=v.size()-1;
+    vector<int> ans;
+    while(x>=0&&v[x]==0)
+    {
+        x--;
+    }
+    while(x>=0)
+    {
+        ans.push_back(v[x]);
+        x--;
+    }
+    return ans;
+}
