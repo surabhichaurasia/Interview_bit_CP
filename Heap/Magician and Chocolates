@@ -1,0 +1,16 @@
+int Solution::nchoc(int A, vector<int> &B) {
+    priority_queue<int> q;
+    long long int total=0;
+    for(auto i:B)
+    {
+        q.push(i);
+    }
+    while(A--)
+    {
+        int x=q.top();
+        total= total+x;
+        q.pop();
+        q.push(floor(x/2));
+    }
+    return total%1000000007;
+}
