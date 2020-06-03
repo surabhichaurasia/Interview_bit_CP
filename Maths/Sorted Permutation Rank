@@ -1,0 +1,25 @@
+int fact(int x)
+{
+    if(x<=1)
+        return 1;
+    return (x*fact(x-1))% 1000003;
+}
+
+int Solution::findRank(string A) {
+    
+    int per=0;
+    for(int i=0;i<A.length();i++)
+    {
+        
+            int count=0;
+        for(int j=i+1;j<A.length();j++)
+        {
+            if(A[j]<A[i])
+            {
+                count++;
+            }
+        }
+        per= (per+ (count*fact(A.length()-i-1))%1000003)%1000003;
+    }
+    return (per+1)%1000003;
+}
